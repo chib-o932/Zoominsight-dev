@@ -1,0 +1,53 @@
+
+        <div class="Title">Project ID: <span class="Title-Content">${data.id}</span></div>
+        <div class="Title">Region: <span class="Title-Content">${data.region}</span></div>
+        <div class="Title">Location: <span class="Title-Content">${data.location}</span>, <span class="Title-Content">${data.shortCountry}</span></div>
+        <div class="Title">Status <span class="Title-Content ${data.status}">${data.status}</span>
+        <table id="ProjectTable" style="margin-top: 1rem">
+
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Details</th>
+                <th>Lead</th>
+                <th>Contact</th>
+            </tr>
+            </thead>
+            <tbody id="project-table-body">
+            <tr>
+                <td>${data.id}</td>
+                <td>${data.title}</td>
+                <td>${data.subject}</td>
+                <td>${data.start}</td>
+                <td>${data.end}</td>
+                <td>${data.details}</td>
+                <td>${data.lead}</td>
+                <td>${data.contact}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="TableName">Visits</div>
+        <table id="VisitTable">
+            <tbody id="visit-table-body"><!--f>IF THIS IS CHANGED DELETE CACHE BEFORE TESTING<-->
+            </tbody>
+        </table>
+        <div class="TableName">Meetings</div>
+        <table id="MeetingTable">
+        </table>
+        <div class="TableName">Partners</div>
+        <table id="PartnerTable">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact Information</th>
+                <th>Type of Partner</th>
+            </tr>
+            </thead>
+            <tbody id="partner-table-body"></tbody>
+        </table>
+

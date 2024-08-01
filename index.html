@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href=Styles.css >
+    <link rel="stylesheet" href="nav-foot-styles.css">
+</head>
+<body>
+<div id="navbar-container"></div>
+<div class="full-width-grid"><div class="header-content">Create Report</div> </div>
+<br>
+<div class="report-grid">
+    <main class="testimonial-grid location-not-chosen">
+        <article class="testimonial flexing quote text-neutral-100">
+            <!--div class="flex">
+            </div-->
+            <div class="first">
+                Select a Location to get started
+            </div>
+            <div class="search">
+                <select id="countryDropdown">
+                    <option value="" disabled selected>Select a country</option>
+
+                </select>
+                <button onclick="panToCountry()">Search</button>
+            </div>
+
+        </article>
+        <article class="testimonial flow bg-primary-400">
+            <div class="flex">
+                <div id="the-map">
+                    <div class="hover-map-country" id="hoverInfo"><div>Hover over a country</div></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="testimonial flow bg-neutral-100 text-secondary-400 dashboard-info">
+            <p>
+                Overall summary of <span id="locationValue"></span>
+            </p>
+
+            <div class="flex">
+                <p>
+                    Project Details
+                </p>
+                </div>
+
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="imgs/Project-Icon.png" alt="Project-Icon" />
+                        <div class="grid-item-content"><div><span id="ProjectNum">10</span></div>No. of Projects<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="imgs/Visit-Icon.png" alt="Visit-Icon"/>
+                        <div class="grid-item-content"><div><span id="VisitNum">12</span></div>No. of Visits<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="imgs/Meeting-Icon.png" alt="Meeting-Icon"/>
+                        <div class="grid-item-content"><div><span id="MeetNum">3</span></div>No. of Meetings<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="imgs/Partner-Icon.png" alt="Partner-Icon"/>
+                        <div class="grid-item-content"><div><span id="PartnerNum">9</span></div>No. of Partners<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="imgs/clipboard-list-check 1.png" alt="Placeholder-Icon" />
+                        <div class="grid-item-content"><div><span id="DirectNum">5</span></div>No. of Directives<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="imgs/Directives-Icon.png" alt="Placeholder-Icon"/>
+                        <div class="grid-item-content"><div><span id="TaskNum">3</span></div>No. of Open Projects<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                    </div>
+                </div>
+
+        </article>
+
+        <article class="testimonial flow bg-neutral-100 text-secondary-400 dashboard-info">
+        <p>
+            Latest Comments
+        </p>
+
+            <div class="scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Comment-Body">
+                        </tbody>
+                    </table>
+                    </div>
+        </article>
+        <article class="testimonial flow bg-neutral-100 text-secondary-400 dashboard-info">
+            <p>
+                View Project Details
+            </p>
+
+            <div class="scroll">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Project&nbsp;ID</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Start&nbsp;Date</th>
+                        <th>End&nbsp;Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="Project-Body">
+                    </tbody>
+                </table>
+            </div>
+        <!--/article>
+        <article class="testimonial flow bg-neutral-100 text-secondary-400 dashboard-info">
+            <p>
+                Included Projects for report
+            </p>
+            <div class="choose-Projects">
+            <div class="grid-containerx" id="gridContainerx"></div>
+            <button onclick="addGridItem()">Add Grid Item</button>
+            </div>
+
+        </article>
+
+        <article-- class="testimonial flow bg-neutral-100 text-secondary-400 dashboard-info">
+            <p>
+                Customize report
+            </p>
+            <button onclick="generateReport()">Generate</button>
+            <button onclick="genReport()">Gen</button>
+        </article-->
+    </main>
+
+
+
+</div>
+<div class="report" id="getReport" class="page">
+    <div class="content" id="content">
+    <div class ="block img-report flex" >
+        <img id="map-image" alt="Map Screenshot" style="width: min-content"/>
+        <article class=" flow bg-neutral-100 text-secondary-400" style="width: 100%; /*height: 100%;*/ border: 1px solid #E7EAEF; border-radius: 5px; padding: 10px;">
+            <p>
+                Overall summary of <span id="locationValueReport"></span>
+            </p>
+
+            <div class="flex">
+                <p>
+                    Project Details
+                </p>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="imgs/Project-Icon.png" alt="Project-Icon" style="width:28px; height: 28px;"  />
+                    <div class="grid-item-content"><div><span id="ProjectNumReport">10</span></div>No. of Projects<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                </div>
+                <div class="grid-item">
+                    <img src="imgs/Visit-Icon.png" alt="Visit-Icon" style="width:28px; height: 28px;" />
+                    <div class="grid-item-content"><div><span id="VisitNumReport">12</span></div>No. of Visits<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                </div>
+                <div class="grid-item">
+                    <img src="imgs/Meeting-Icon.png" alt="Meeting-Icon" style="width:28px; height: 28px;" />
+                    <div class="grid-item-content"><div><span id="MeetNumReport">3</span></div>No. of Meetings<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                </div>
+                <div class="grid-item">
+                    <img src="imgs/Partner-Icon.png" alt="Partner-Icon" style="width:28px; height: 28px;" />
+                    <div class="grid-item-content"><div><span id="PartnerNumReport">9</span></div>No. of Partners<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                </div>
+                <div class="grid-item">
+                    <img src="imgs/Placeholder-Icon.png" alt="Placeholder-Icon" style="width:28px; height: 28px;" />
+                    <div class="grid-item-content"><div><span id="DirectNumReport">5</span></div>No. of Directives<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                </div>
+                <div class="grid-item">
+                    <img src="imgs/Placeholder-Icon.png" alt="Placeholder-Icon" style="width:28px; height: 28px;" />
+                    <div class="grid-item-content"><div><span id="TaskNumReport">3</span></div>No. of Open Tasks<div class="grid-update"><span >+8% from yesterday</span></div></div>
+                </div>
+            </div>
+
+        </article>
+    </div>
+    <div id="getReport2">
+<div id="FullProjects"></div>
+    </div>
+    </div>
+</div>
+
+
+<!--script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script-->
+<div id="image-container"></div>
+<div id="footer-container"></div>
+<script>
+    // Load the navbar
+    fetch('nav-bar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-container').innerHTML = data;
+
+        });
+    // Load the footer
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+</script>
+
+<script src="data.js"></script>
+<script src="details.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
+<script src="genReport.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"</script>
+
+</body>
+</html>
+
