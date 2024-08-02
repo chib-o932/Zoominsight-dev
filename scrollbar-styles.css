@@ -1,0 +1,23 @@
+
+/* Style for WebKit browsers */
+.scroll-container ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;/* Width of the scrollbar */
+}
+
+.scroll-container ::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 6px;
+    margin-block: 3px/* Background of the scrollbar track */
+}
+
+
+.scroll-container ::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 80.3%); /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners of the scrollbar thumb */
+}
+
+.scroll-container ::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 53.3%); /* Color when hovering over the scrollbar thumb */
+}
+
