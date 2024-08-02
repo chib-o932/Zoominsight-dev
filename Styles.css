@@ -6,7 +6,7 @@
     [full-width-start] minmax(2rem, 1fr)
     [content-start]  min(100% - 4rem, var(--content-max-width)) [content-end]
     minmax(2rem, 1fr) [full-width-end];
-    padding-top: 100px;
+    margin-top: 100px;
     color: white;
     align-items: center;
     background-image: url('imgs/report-header.png'); /* Path to your image */
@@ -48,7 +48,13 @@
     grid-column: content;
 }
 
-
+.search button{
+    background: #f1f1f1;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 0.3rem;
+}
 
 :root {
     --clr-primary-400: 263 55% 52%;
@@ -212,6 +218,7 @@ h3 {
     display: inline-block;
     margin-inline: auto;
     text-align: center;
+    z-index: 50;
 }
 
 /* components */
@@ -222,7 +229,7 @@ h3 {
     #the-map {
         width: 100%;
         height:600px;
-        transition: width 2s ease;
+        transition: height 2s ease;
 
     }
 }
@@ -320,15 +327,7 @@ h3 {
      'four four';
     }
 }
-
-@media screen and (min-width: 54em) {
-    .testimonial-grid {
-        grid-template-areas:
-      "one one two"
-      "five five five"
-      "three four four";
-    }
-}*/
+*/
 
 @media screen and (max-width: 1530px) {
     .location-chosen {
@@ -349,11 +348,25 @@ h3 {
     }
 }
 
-
-.testimonial.quote {
-    background-image: url("./images/bg-pattern-quotation.svg");
-    background-repeat: no-repeat;
-    background-position: top right 10%;
+@media screen and (max-width: 800px) {
+    .location-chosen {
+        grid-template-areas:
+        "one"
+        "two"
+        "three"
+        "four"
+        "five";
+        gap: 10px; /* Add gap between rows if needed */
+        width: auto;
+    }
+    /*.testimonial:nth-child(2) {
+        grid-area: two;
+    }*/
+    #the-map {
+        width: auto;
+        height: 200px;
+        /*transition: width 2s ease, height 2s ease*/
+    }
 }
 
 .testimonial:not(:nth-child(2)) img {
@@ -383,22 +396,30 @@ h3 {
 }
 
 /*MY ADDED*/
-.flexing{
+.flexing {
     display: flex;
     flex-direction: row;
     width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
 }
-.first{
+
+.first {
     font-size: var(--fs-500);
-    flex: 1;
+    flex: 1 1 auto;
     opacity: 0.7;
     color: black;
+    min-width: 200px; /* Adjust as needed */
+    margin-bottom: 10px;
 }
 
 .search {
-    justify-content: flex-end;
     display: flex;
+    justify-content: flex-start; /* Align left when wrapped */
     gap: 1rem;
+    flex-wrap: wrap;
+    flex: 0 1 auto; /* Allow shrinking but do not force grow */
+    min-width: 200px; /* Adjust as needed */
 }
 
 
@@ -537,6 +558,10 @@ td{
     color: #000;
     padding-top: 0.3rem;
     font-weight: lighter;
+}
+
+#Comment-Body{
+    vertical-align: top;
 }
 
 .view-more-button{
@@ -798,3 +823,200 @@ td{
 .element {
     margin-bottom: 10px;
 }
+
+/******************************************************************************/
+/*****************************ACCORDIAN STYLES*********************************/
+
+/* styles.css */
+/* styles.css */
+
+/* styles.css */
+.overlay-content {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#accordion{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+.accordion-main-container {
+    /*height: 100vh; /* Use viewport height for the wrapper */
+    margin: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #05004E;
+    display: flex;
+    /*position: absolute;*/
+
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.options button{
+    height: fit-content;
+    background: transparent;
+    border: none;
+    border-radius: 0.3rem;
+    display: flex;
+}
+.options button:nth-of-type(1){
+    margin-right: 20px;
+    outline: 1px solid #E7EAEF;
+    margin-top: 5px;
+    vertical-align: middle;
+    width: 80px;
+}
+
+.options button:nth-of-type(1) img{
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.options button:nth-of-type(2){
+    padding: 0.2rem 0.4rem; /* Top and bottom=0.2, left and right=0.4 */
+
+}
+
+.options button:nth-of-type(2):hover{
+    background-color: #FFE2E5;
+}
+
+.options button:nth-of-type(1):hover{
+    background: hsl(0, 0%, 95%);
+}
+
+.accordion {
+    width: 100%;
+    /*max-width: 80%;*/
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    padding: 1em;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-item:not(:first-child) {
+    margin-top: 1rem;
+}
+
+
+.accordion-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s;
+    display: flex;
+}
+
+.flex-push{
+    flex: 1;
+    text-align:left;
+}
+
+.accordion-trigger svg {
+
+}
+.accordion-trigger:hover {
+    background: #e1e1e1;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0.1em;
+    /*background: #fff;*/
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-content.show {
+    max-height: fit-content; /* Adjust this value to the expected content height */
+    padding: 0.5em 0.1em;
+    /*padding-top: 15px;*/
+    margin-top: -5px;
+}
+
+.accordion-trigger .show{
+    transform: rotate(180deg);
+}
+
+.accordion {
+
+}
+
+#forProjects{
+    margin-top: 0.3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+
+.accordion-container {
+    border-collapse: collapse;
+    overflow-x: scroll;
+    margin-bottom: 1rem;
+}
+
+.notProjectsAccordion{
+    padding-bottom: 0.2rem;
+}
+
+.accordion-container th, .accordion-container td{
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+
+.accordion-container th{
+    text-align: left;
+    padding-right: 2rem;
+    background: #E7EAEF;
+    border-collapse: collapse;
+    color: #05004E;
+    font-weight: bold;
+    font-size: 12px;
+
+}
+
+.accordion-container td{
+    vertical-align: center;
+    text-align: left;
+    padding-right: 2rem;
+    border-collapse: collapse;
+    color: #000000;
+    font-size: 12px;
+    border-bottom: 1px solid #E7EAEF;
+}
+

@@ -78,6 +78,7 @@ function fillProjectDetails(){
         actionButton.id = data.id;
         actionButton.addEventListener('click', () => {
             alert(`Button clicked! ${data.id}`);
+            loadOverlay();
         });
 
         actionCell.appendChild(actionButton);

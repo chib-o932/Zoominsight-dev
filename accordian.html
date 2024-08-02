@@ -1,0 +1,194 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="scrollbar-styles.css">
+</head-->
+<body>
+<div id="accordion" class="scroll-container">
+<div class="accordion-main-container">
+    <div class="accordion">
+        <div class="options">
+            <div class="flex-push">
+        <div class="Title">Project ID: <span class="Title-Content">${data.id}</span></div>
+        <div class="Title">Region: <span class="Title-Content">${data.region}</span></div>
+        <div class="Title">Location: <span class="Title-Content">${data.location}</span>, <span class="Title-Content">${data.shortCountry}</span></div>
+        <div class="Title">Status: <span class="Title-Content ${data.status}">${data.status}</span></div>
+                </div>
+            <button><img src="imgs/Export-Icon.png" alt="Export button">Export</button>
+            <button onclick="hideOverlay()"><img src="imgs/X-circle.png" alt="exit button"> </button>
+        </div>
+        <div class="accordion-container" id="forProjects">
+        <table id="ProjectAccordionTable" >
+
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Subject</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Details</th>
+                <th>Lead</th>
+                <th>Contact</th>
+            </tr>
+            </thead>
+            <tbody id="project-accordion-body">
+            <tr>
+                <td>${data.title}</td>
+                <td>${data.subject}</td>
+                <td>${data.start}</td>
+                <td>${data.end}</td>
+                <td>${data.details}</td>
+                <td>${data.lead}</td>
+                <td>${data.contact}</td>
+            </tr>
+            </tbody>
+        </table>
+            </div>
+        <div class="accordion-item ">
+            <button class="accordion-trigger">
+                <div class="flex-push TableName">Visits</div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="accordion-content ">
+                <div class="accordion-container notProjectsAccordion">
+                    <table id="VisitAccordionTable" >
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Subject</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Details</th>
+                    <th>Lead</th>
+                    <th>Contact</th>
+                </tr>
+                        <tbody id="visit-accordion-body">
+                        <tr>
+                            <td>${data.id}</td>
+                            <td>${data.title}</td>
+                            <td>${data.subject}</td>
+                            <td>${data.start}</td>
+                            <td>${data.end}</td>
+                            <td>${data.details}</td>
+                            <td>${data.lead}</td>
+                            <td>${data.contact}</td>
+                        </tr>
+                        <tr>
+                            <td>${data.id}</td>
+                            <td>${data.title}</td>
+                            <td>${data.subject}</td>
+                            <td>${data.start}</td>
+                            <td>${data.end}</td>
+                            <td>${data.details}</td>
+                            <td>${data.lead}</td>
+                            <td>${data.contact}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-trigger">
+                <div class="flex-push TableName">Meeting Minutes</div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+
+            <div class="accordion-content">
+                <div class="accordion-container notProjectsAccordion">
+                    <table id="MeetingAccordionTable" >
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Subject</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Details</th>
+                            <th>Lead</th>
+                            <th>Contact</th>
+                        </tr>
+                        <tbody id="meeting-accordion-body">
+                        <tr>
+                            <td>${data.id}</td>
+                            <td>${data.title}</td>
+                            <td>${data.subject}</td>
+                            <td>${data.start}</td>
+                            <td>${data.end}</td>
+                            <td>${data.details}</td>
+                            <td>${data.lead}</td>
+                            <td>${data.contact}</td>
+                        </tr>
+                        <tr>
+                            <td>${data.id}</td>
+                            <td>${data.title}</td>
+                            <td>${data.subject}</td>
+                            <td>${data.start}</td>
+                            <td>${data.end}</td>
+                            <td>${data.details}</td>
+                            <td>${data.lead}</td>
+                            <td>${data.contact}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-trigger">
+                <div class="flex-push TableName">Partners</div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-container notProjectsAccordion">
+                    <table id="PartnerAccordionTable" >
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Subject</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Details</th>
+                            <th>Lead</th>
+                            <th>Contact</th>
+                        </tr>
+                        <tbody id="partner-accordion-body">
+                        <tr>
+                            <td>${data.id}</td>
+                            <td>${data.title}</td>
+                            <td>${data.subject}</td>
+                            <td>${data.start}</td>
+                            <td>${data.end}</td>
+                            <td>${data.details}</td>
+                            <td>${data.lead}</td>
+                            <td>${data.contact}</td>
+                        </tr>
+                        <tr>
+                            <td>${data.id}</td>
+                            <td>${data.title}</td>
+                            <td>${data.subject}</td>
+                            <td>${data.start}</td>
+                            <td>${data.end}</td>
+                            <td>${data.details}</td>
+                            <td>${data.lead}</td>
+                            <td>${data.contact}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="accordion-container">
+    <!--script src="accordion.js"></script>
+</body>
+</html-->

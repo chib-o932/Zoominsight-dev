@@ -6,17 +6,20 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href=Styles.css >
+    <link rel="stylesheet" href="scrollbar-styles.css">
     <link rel="stylesheet" href="nav-foot-styles.css">
 </head>
 <body>
+<div class="scroll-container">
 <div id="navbar-container"></div>
 <div class="full-width-grid"><div class="header-content">Create Report</div> </div>
 <br>
 <div class="report-grid">
     <main class="testimonial-grid location-not-chosen">
-        <article class="testimonial flexing quote text-neutral-100">
+        <article class="testimonial  quote text-neutral-100">
             <!--div class="flex">
             </div-->
+            <div class="flexing">
             <div class="first">
                 Select a Location to get started
             </div>
@@ -27,7 +30,7 @@
                 </select>
                 <button onclick="panToCountry()">Search</button>
             </div>
-
+            </div>
         </article>
         <article class="testimonial flow bg-primary-400">
             <div class="flex">
@@ -116,6 +119,7 @@
                     </tbody>
                 </table>
             </div>
+            </article>
         <!--/article>
         <article class="testimonial flow bg-neutral-100 text-secondary-400 dashboard-info">
             <p>
@@ -192,7 +196,9 @@
 
 
 <!--script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script-->
+    <div id="overlay-container"></div>
 <div id="image-container"></div>
+</div>
 <div id="footer-container"></div>
 <script>
     // Load the navbar
@@ -209,16 +215,18 @@
             document.getElementById('footer-container').innerHTML = data;
         });
 </script>
-
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script><!--MUST GO FIRST-->
+<script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script><!--MUST GO FIRST-->
+<script src="script.js"></script>
 <script src="data.js"></script>
 <script src="details.js"></script>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
-<script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
 <script src="genReport.js"></script>
+<script src="accordion.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </body>
 </html>
