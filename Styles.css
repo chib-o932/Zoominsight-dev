@@ -337,7 +337,7 @@ h3 {
       "four four four"
       "five five five";
         #the-map {
-            width: 100%;
+            max-width: 100%;
             height:375px;
             /*transition: width 2s ease, height 2s ease*/
 
@@ -346,6 +346,7 @@ h3 {
     .grid-item {
         padding: 0.2rem;
     }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -356,17 +357,99 @@ h3 {
         "three"
         "four"
         "five";
-        gap: 10px; /* Add gap between rows if needed */
-        width: auto;
     }
-    /*.testimonial:nth-child(2) {
-        grid-area: two;
-    }*/
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Creates 6 equal columns */
+        grid-template-rows: repeat(2, 1fr); /* Creates 2 equal rows */
+    }
     #the-map {
-        width: auto;
-        height: 200px;
+        height: 150px;
         /*transition: width 2s ease, height 2s ease*/
     }
+    .grid-item {
+        padding: 0;
+    }
+
+    .testimonial:nth-child(5){
+        width: calc(100%);
+
+    }
+    #scroll{
+        overflow-x: scroll;
+        max-width: 550px;
+
+    }
+
+}
+@media screen and (max-width: 730px) {
+    #scroll{
+        overflow-x: scroll;
+        width: 500px;
+
+    }
+
+}
+
+@media screen and (max-width: 660px) {
+    #scroll{
+        overflow-x: scroll;
+        width: 400px;
+
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    #the-map {
+        height: 100px;
+        /*transition: width 2s ease, height 2s ease*/
+    }
+    .report-grid {
+        --content-max: 1530px;
+        grid-template-columns:[full-width-start] 1px
+    [content-start]  min(100%) [content-end] 1px [full-width-end];
+    }
+    #scroll{
+        width: 300px;
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    #scroll{
+        overflow-x: scroll;
+        width: 300px;
+
+    }
+
+}
+
+@media screen and (max-width: 475px) {
+    #scroll{
+        overflow-x: scroll;
+        width: 275px;
+
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    #scroll{
+        overflow-x: scroll;
+        width: 170px;
+
+    }
+
+}
+
+@media screen and (max-width: 410px) {
+    #scroll{
+        overflow-x: scroll;
+        width: 150px;
+
+    }
+
 }
 
 .testimonial:not(:nth-child(2)) img {
@@ -906,8 +989,8 @@ td{
 }
 
 .accordion {
-    width: 100%;
-    /*max-width: 80%;*/
+    /*width: 100%;*/
+    max-width: 80vw;
     margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 4px;
