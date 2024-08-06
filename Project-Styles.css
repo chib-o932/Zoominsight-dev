@@ -1,0 +1,190 @@
+.ProjectContainer {
+    margin: 20px;
+    padding: 1rem;
+    width: 80vw;
+    margin-inline: auto;/*THIS CENTRES IT*/
+    color: #05004E;
+}
+
+.one{
+    color: #082649;
+    font-size: 42px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    position: relative;
+    top: -50px;
+    margin-right: 10px;
+}
+
+.two{
+        background-color: #082649;
+        color: white;
+        width: 75px;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        position: relative;
+        top: -25px;
+        margin-right: 10px;
+    }
+
+    .Title{
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    .Title-Content{
+        font-weight: 200;
+        font-size: 16px;
+    }
+
+    .TableName{
+        font-size: 16px;
+    }
+
+
+
+
+    .ProjectContainer table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
+        font-family: 'Roboto', sans-serif;
+        padding-top: 2rem;
+        padding-bottom: 0.1rem;
+
+    }
+
+    .ProjectContainer tr{
+        vertical-align: top;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .ProjectContainer #ProjectTable thead{
+        white-space: nowrap;
+    }
+
+    .ProjectContainer th{
+        text-align: left;
+        padding-right: 2rem;
+        background: #E7EAEF;
+        border-collapse: collapse;
+        color: #05004E;
+        font-weight: bold;
+        font-size: 12px;
+
+    }
+
+    .ProjectContainer td{
+        text-align: left;
+        padding-right: 2rem;
+        border-collapse: collapse;
+        color: #000000;
+        font-size: 12px;
+        border-bottom: 1px solid #E7EAEF;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+
+    tr{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #VisitTable,#MeetTable {
+        margin-bottom: 0.2rem;
+    }
+
+    .details{
+
+        font-weight: bold;
+        font-size: 12px;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #E7EAEF;
+        line-height: 1.5;
+    }
+
+    .details-Content{
+        color: black;
+        font-weight: lighter;
+        font-size: 12px;
+
+    }
+
+    .rating-1,.rating-2,
+    .rating-3,
+    .rating-4,.rating-5{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 0.1rem;
+        width: fit-content;
+        border-radius: 50%;
+        font-size: 16px; /* Text size*/
+        margin: 2px;
+        /* font-weight: bold;*/
+    }
+
+    .rating-1,.rating-2{
+        background-color: #FF97A2;
+        color: #DD0909; /* Text color */
+
+    }
+
+    .rating-3{
+        background-color: yellow;
+    }
+
+    .rating-4,.rating-5{
+        background-color: #DCFCE7;
+        color: #0DBB33;
+    }
+
+    .open,
+    .closed,
+    .completed{
+        text-align: center;
+        padding: 0.1rem 1rem 0.35rem;
+        border-radius: 1rem;
+        line-height: 1.5;
+        text-align: center;
+
+    }
+
+    .open{
+        background-color: #DCFCE7;
+        color: #0DBB33;
+    }
+
+
+    .closed{
+        background-color: #FF97A2;
+        color: #DD0909; /* Text color */
+        padding: 0.1rem 1rem 0.15rem;
+    }
+
+    .completed{
+        background-color: #A8CFEB;
+        color: #3496DC; /* Text color */
+    }
+
+
+    #remove-background{
+        background: none;
+    }
+    .ProjectContainer tr>*{
+        padding:1rem;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+
+    }
+
+    .break{
+        outline: 1px solid limegreen !important;
+    }
+
